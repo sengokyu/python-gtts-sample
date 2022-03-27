@@ -175,6 +175,14 @@ checkqa-mypy = ["mypy (==v0.761)"]
 testing = ["argcomplete", "hypothesis (>=3.56)", "mock", "nose", "requests", "xmlschema"]
 
 [[package]]
+name = "python-openal"
+version = "0.4.0"
+description = "Python OpenAL bindings"
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
 name = "requests"
 version = "2.27.1"
 description = "Python HTTP for Humans."
@@ -232,7 +240,7 @@ python-versions = "*"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "448b8c217cdf2c4be18e99cb7b4ee768d432249ae3a94e873efa047794e0919a"
+content-hash = "c8ed6e5e992a6bff5753b2a8c7dc908349f080af1db97a947d0200e6241b0c96"
 
 [metadata.files]
 atomicwrites = [
@@ -298,6 +306,9 @@ pyparsing = [
 pytest = [
     {file = "pytest-5.4.3-py3-none-any.whl", hash = "sha256:5c0db86b698e8f170ba4582a492248919255fcd4c79b1ee64ace34301fb589a1"},
     {file = "pytest-5.4.3.tar.gz", hash = "sha256:7979331bfcba207414f5e1263b5a0f8f521d0f457318836a7355531ed1a4c7d8"},
+]
+python-openal = [
+    {file = "python-openal-0.4.0.zip", hash = "sha256:975241feb54cc17bc04c691ea1fb76954aa7e4d0392a82790b601a1ecc1dbdb5"},
 ]
 requests = [
     {file = "requests-2.27.1-py2.py3-none-any.whl", hash = "sha256:f22fa1e554c9ddfd16e6e41ac79759e17be9e492b3587efa038054674760e72d"},
