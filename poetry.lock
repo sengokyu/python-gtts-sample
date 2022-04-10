@@ -104,6 +104,25 @@ optional = false
 python-versions = "*"
 
 [[package]]
+name = "lame-ctypes"
+version = "0.1.3"
+description = "Just Lame ctypes binding."
+category = "main"
+optional = false
+python-versions = ">=3.10,<4.0"
+
+[[package]]
+name = "lamedec"
+version = "0.1.2"
+description = ""
+category = "main"
+optional = false
+python-versions = ">=3.10,<4.0"
+
+[package.dependencies]
+lame-ctypes = ">=0.1.3,<0.2.0"
+
+[[package]]
 name = "packaging"
 version = "21.3"
 description = "Core utilities for Python packages"
@@ -142,6 +161,14 @@ optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
 
 [[package]]
+name = "pyopenal"
+version = "0.7.11a1"
+description = "OpenAL integration for Python"
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
 name = "pyparsing"
 version = "3.0.7"
 description = "Python parsing module"
@@ -172,14 +199,6 @@ tomli = ">=1.0.0"
 
 [package.extras]
 testing = ["argcomplete", "hypothesis (>=3.56)", "mock", "nose", "pygments (>=2.7.2)", "requests", "xmlschema"]
-
-[[package]]
-name = "python-openal"
-version = "0.4.0"
-description = "Python OpenAL bindings"
-category = "main"
-optional = false
-python-versions = "*"
 
 [[package]]
 name = "requests"
@@ -239,7 +258,7 @@ socks = ["PySocks (>=1.5.6,!=1.5.7,<2.0)"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "fa08e9ce053852546605e384a8543dfcb3f20e50bb9f3f32e8dbf72ae5d75659"
+content-hash = "99d9a06de603429350f28d75169945b55dfc8eb61ceaee4ca9cf04e7f0ac5fcc"
 
 [metadata.files]
 atomicwrites = [
@@ -282,6 +301,14 @@ iniconfig = [
     {file = "iniconfig-1.1.1-py2.py3-none-any.whl", hash = "sha256:011e24c64b7f47f6ebd835bb12a743f2fbe9a26d4cecaa7f53bc4f35ee9da8b3"},
     {file = "iniconfig-1.1.1.tar.gz", hash = "sha256:bc3af051d7d14b2ee5ef9969666def0cd1a000e121eaea580d4a313df4b37f32"},
 ]
+lame-ctypes = [
+    {file = "lame-ctypes-0.1.3.tar.gz", hash = "sha256:da99d1110732f95d3ad712e2ffc5d7ff2a5ef5955b108a71e956a453c552ff9b"},
+    {file = "lame_ctypes-0.1.3-py3-none-any.whl", hash = "sha256:6933fc732c06f0293699f1e1ff45ebe1441de104f45b6149f6bf506208a97782"},
+]
+lamedec = [
+    {file = "lamedec-0.1.2-py3-none-any.whl", hash = "sha256:b5d03fc7a666e249478aefaa483dc822b80b1351a8341b27e0fd8a9f90df8a7e"},
+    {file = "lamedec-0.1.2.tar.gz", hash = "sha256:7d097dcfd7043148098764f08d03f2d5e8bc947833746b82c368eefa36ca8f50"},
+]
 packaging = [
     {file = "packaging-21.3-py3-none-any.whl", hash = "sha256:ef103e05f519cdc783ae24ea4e2e0f508a9c99b2d4969652eed6a2e1ea5bd522"},
     {file = "packaging-21.3.tar.gz", hash = "sha256:dd47c42927d89ab911e606518907cc2d3a1f38bbd026385970643f9c5b8ecfeb"},
@@ -298,6 +325,11 @@ pycodestyle = [
     {file = "pycodestyle-2.8.0-py2.py3-none-any.whl", hash = "sha256:720f8b39dde8b293825e7ff02c475f3077124006db4f440dcbc9a20b76548a20"},
     {file = "pycodestyle-2.8.0.tar.gz", hash = "sha256:eddd5847ef438ea1c7870ca7eb78a9d47ce0cdb4851a5523949f2601d0cbbe7f"},
 ]
+pyopenal = [
+    {file = "PyOpenAL-0.7.11a1-py2.py3-none-win32.whl", hash = "sha256:6df4ccf1fcb03e5b385a0e68e461ef00c62a1fa3557ac6c669bb50aec45a6cbb"},
+    {file = "PyOpenAL-0.7.11a1-py2.py3-none-win_amd64.whl", hash = "sha256:da5bfdbe8fb3d2987d60430bec66ec8e51ef52ae8f792c0aa8a370413e712b45"},
+    {file = "PyOpenAL-0.7.11a1.tar.gz", hash = "sha256:33ffd00bac6208755d36c744ffe8b5866d10b3c8aac05dfc173d5166df5d76c1"},
+]
 pyparsing = [
     {file = "pyparsing-3.0.7-py3-none-any.whl", hash = "sha256:a6c06a88f252e6c322f65faf8f418b16213b51bdfaece0524c1c1bc30c63c484"},
     {file = "pyparsing-3.0.7.tar.gz", hash = "sha256:18ee9022775d270c55187733956460083db60b37d0d0fb357445f3094eed3eea"},
@@ -305,9 +337,6 @@ pyparsing = [
 pytest = [
     {file = "pytest-7.1.1-py3-none-any.whl", hash = "sha256:92f723789a8fdd7180b6b06483874feca4c48a5c76968e03bb3e7f806a1869ea"},
     {file = "pytest-7.1.1.tar.gz", hash = "sha256:841132caef6b1ad17a9afde46dc4f6cfa59a05f9555aae5151f73bdf2820ca63"},
-]
-python-openal = [
-    {file = "python-openal-0.4.0.zip", hash = "sha256:975241feb54cc17bc04c691ea1fb76954aa7e4d0392a82790b601a1ecc1dbdb5"},
 ]
 requests = [
     {file = "requests-2.27.1-py2.py3-none-any.whl", hash = "sha256:f22fa1e554c9ddfd16e6e41ac79759e17be9e492b3587efa038054674760e72d"},
