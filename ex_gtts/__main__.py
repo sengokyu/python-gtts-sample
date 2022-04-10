@@ -1,10 +1,9 @@
 import sys
 import time
-import wave
 from gtts import gTTS
 from io import BytesIO
 from lamedec import decode
-from openal import oalQuit, AL_PLAYING, WaveFile, Source,Buffer
+from openal import oalQuit, AL_PLAYING, WaveFile, Source, Buffer
 
 
 def usage():
@@ -19,12 +18,11 @@ def main(lang, text):
     ):
         tts = gTTS(text=text, lang=lang)
         tts.write_to_fp(mp3_fp)
-        mp3_fp.seek(0)
 
+        mp3_fp.seek(0)
         decode(mp3_fp, wav_fp)
 
         wav_fp.seek(0)
-
         buf = Buffer(WaveFile(wav_fp))
         source = Source(buf)
         source.play()
